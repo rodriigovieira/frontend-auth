@@ -11,3 +11,9 @@ git clone https://github.com/rodriigovieira/frontend-auth
 yarn
 yarn start
 ```
+
+Test user: 
+```
+  Email: rodriigovieira@gmail.com
+  Password: teste123
+```

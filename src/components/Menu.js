@@ -3,6 +3,7 @@ import { MDBNavbar, MDBNavbarBrand, NavbarNav, MDBNavItem, MDBNavLink, MDBNavbar
   from 'mdbreact';
 
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 class Menu extends Component {
   state = {
@@ -11,6 +12,22 @@ class Menu extends Component {
 
   toggleCollapse = collapseID => () => {
     this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
+  }
+
+  handleLogout = () => {
+    axios.request({
+      url: 'http://localhost:3000/api/users/logout',
+      method: 'put',
+      headers: {
+        CSRFtoken: localStorage.getItem('csrf')
+      }
+    })
+      .then(res => console.log(res))
+      .catch(e => {
+        console.log(e)
+        console.log(e.title)
+        console.log(e.msg)
+      })
   }
 
   render() {
@@ -31,7 +48,12 @@ class Menu extends Component {
                   <Link to="/criar">Criar Usuário</Link>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <Link to="/">Finalizar Sessão</Link>
+                  <Link
+                    onClick={this.handleLogout}
+                    to="/"
+                  >
+                    Finalizar Sessão
+                  </Link>
                 </MDBNavItem>
               </NavbarNav>
             </MDBCollapse>

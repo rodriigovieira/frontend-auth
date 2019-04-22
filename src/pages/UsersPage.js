@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import { MDBTable, MDBTableBody, MDBTableHead } from 'mdbreact';
+import {
+  MDBTable,
+  MDBTableBody,
+  MDBTableHead,
+  MDBTooltip,
+  MDBBtn
+} from 'mdbreact';
+import { Link } from 'react-router-dom'
 
 import Menu from '../components/Menu'
 
@@ -21,22 +28,58 @@ export default class UsersPage extends Component {
           </MDBTableHead>
           <MDBTableBody>
             <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <td>
+                <Link to="/editar">
+                  <MDBTooltip
+                    placement="top"
+                    domElement
+                  >
+                    <span>Roberto</span>
+                    <span>
+                      Editar Usuário
+    </span>
+                  </MDBTooltip>
+                </Link>
+              </td>
+              <td>
+                <Link to="/editar">
+                  <MDBTooltip
+                    placement="right"
+                    domElement
+                  >
+                    <span>Santos</span>
+                    <span>
+                      Editar Usuário
+    </span>
+                  </MDBTooltip>
+                </Link>
+              </td>
+              <td>
+                <Link to="/editar">
+                  <MDBTooltip
+                    placement="bottom"
+                    domElement
+                  >
+                    <span>roberto@roberto.com</span>
+                    <span>
+                      Editar Usuário
+    </span>
+                  </MDBTooltip>
+                </Link>
+              </td>
+              <td>
+                <Link to="/editar">
+                  <MDBTooltip
+                    placement="left"
+                    domElement
+                  >
+                    <span>DELETAR</span>
+                    <span>
+                      Editar Usuário
+    </span>
+                  </MDBTooltip>
+                </Link>
+              </td>
             </tr>
           </MDBTableBody>
         </MDBTable>

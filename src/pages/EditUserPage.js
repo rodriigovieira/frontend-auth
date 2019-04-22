@@ -15,9 +15,9 @@ import { Link } from 'react-router-dom'
 
 import Menu from '../components/Menu'
 
-import './CreateUserPage.css';
+import './EditUserPage.css';
 
-const CreateUserPage = () => {
+const EditUserPage = () => {
   return (
     <React.Fragment>
       <Menu />
@@ -28,7 +28,7 @@ const CreateUserPage = () => {
               <MDBCardBody>
                 <MDBCardHeader className="form-header deep-blue-gradient rounded">
                   <h3 className="my-3">
-                    <MDBIcon icon="lock" /> Criar Usuário
+                    <MDBIcon icon="lock" /> Editar Usuário
                 </h3>
                 </MDBCardHeader>
                 <form>
@@ -41,9 +41,10 @@ const CreateUserPage = () => {
                       validate
                       error="wrong"
                       success="right"
+                      defaultValue="xxx@xxx.xxx"
                     />
                     <MDBInput
-                      label="Digite a senha"
+                      label="Deseja mudar a senha?"
                       icon="lock"
                       group
                       type="password"
@@ -64,7 +65,7 @@ const CreateUserPage = () => {
                       className="mb-3"
                       type="submit"
                     >
-                      Criar Usuário
+                      Editar Usuário
                 </MDBBtn>
                   </div>
                 </form>
@@ -77,4 +78,4 @@ const CreateUserPage = () => {
   );
 };
 
-export default CreateUserPage;
+export default EditUserPage;

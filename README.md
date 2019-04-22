@@ -7,6 +7,7 @@ It uses the MDBootstrap framework for most of its design.
 To execute the project, simply run the following commands:
 
 ```
+git clone https://github.com/rodriigovieira/frontend-auth
 yarn
 yarn start
 ```
